@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 
 function QuestionForm({handleAddQuestion}) {
-  const [formData, setFormData] = useState({
-    prompt: "",
-    answer1: "",
-    answer2: "",
-    answer3: "",
-    answer4: "",
-    correctIndex: 0,
-  });
+  
+  const defaultState = {prompt: "", answer1: "", answer2: "",answer3: "", answer4: "", correctIndex: 0}
+  const [formData, setFormData] = useState(defaultState);
 
   function handleChange(event) {
     setFormData({
@@ -24,8 +19,8 @@ function QuestionForm({handleAddQuestion}) {
     }
   }
   function handleSubmit(event) {
-    event.target.reset();
     event.preventDefault();
+    
   
    // console.log(formData);
   
@@ -38,8 +33,9 @@ function QuestionForm({handleAddQuestion}) {
       body: JSON.stringify(improveFormatting(formData))
     })
     .then(result => result.json())
-    .then(data => {
+    .then(data => { setFormData(defaultState)
       handleAddQuestion(data)
+      
     });
   }
 

@@ -87,6 +87,28 @@
       ],
       "correctIndex": "2",
       "id": 8
+    },
+    {
+      "prompt": "t",
+      "answers": [
+        "t",
+        "y",
+        "c",
+        "d"
+      ],
+      "correctIndex": "2",
+      "id": 9
+    },
+    {
+      "prompt": "What is your name?",
+      "answers": [
+        "salt",
+        "mercy",
+        "chep",
+        "njoki"
+      ],
+      "correctIndex": "1",
+      "id": 10
     }
   ]
 }
